@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DIA Fund â Dream. Inspire. Advance.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Garamond', serif;
+            background-color: #faf8f5;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #1f2937;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .hero .container {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.5rem;
+            color: #16a34a;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 5rem 2rem;
+        }
+
+        .mission .container {
+            max-width: 1200px;
+        }
+
+        .section-title {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 0;
+        }
+
+        .pillar-card {
+            background-color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border-left: 5px solid #1d4ed8;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .pillar-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .pillar-card:nth-child(2) {
+            border-left-color: #16a34a;
+        }
+
+        .pillar-card:nth-child(3) {
+            border-left-color: #d97706;
+        }
+
+        .pillar-card:nth-child(4) {
+            border-left-color: #2563eb;
+        }
+
+        .pillar-card h3 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .how-it-works .container {
+            max-width: 900px;
+        }
+
+        .how-it-works p {
+            font-size: 1.05rem;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-highlight {
+            background-color: #faf8f5;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-highlight p {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 5rem 2rem;
+        }
+
+        .partners .container {
+            max-width: 1000px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 0;
+        }
+
+        .partner {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .partner:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-name {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .partner-rating {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .partner p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .partner-link {
+            display: inline-block;
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: system-ui, -apple-system, sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .partner-link:hover {
+            color: #16a34a;
+        }
+
+        /* Growing With Dia */
+        .growing {
+            background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+            padding: 5rem 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .growing .container {
+            max-width: 900px;
+        }
+
+        .growing-content {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .growing h2 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .growing p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .growing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-quote {
+            color: #16a34a;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #ffffff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .container {
+            max-width: 1200px;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-title {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            color: #93c5fd;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #374151;
+            margin: 2rem 0;
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .growing-content {
+                padding: 2rem;
+            }
+
+            .growing h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .mission {
+                padding: 3rem 1.5rem;
+            }
+
+            .how-it-works {
+                padding: 3rem 1.5rem;
+            }
+
+            .partners {
+                padding: 3rem 1.5rem;
+            }
+
+            .growing {
+                padding: 3rem 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            nav .logo {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">The DIA Fund</a>
+            <a href="https://scannibal.app" class="footer-link" style="margin: 0;">Learn about Scannibal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>The DIA Fund</h1>
+            <div class="tagline">Dream. Inspire. Advance.</div>
+            <p>Named for Dia Rao, The DIA Fund is a family philanthropy dedicated to fighting hunger, protecting animals, safeguarding the environment, and expanding opportunity for underserved children.</p>
+        </div>
+    </section>
+
+    <!-- Mission Pillars -->
+    <section class="mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission Pillars</h2>
+            <p class="section-subtitle">Four commitments that guide our giving and shape a better world.</p>
+            <div class="pillars">
+                <div class="pillar-card">
+                    <h3>Hunger Relief</h3>
+                    <p>Ensuring no family goes hungry. Supporting food banks and feeding programs that provide nourishing meals to families in crisis.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Animal Welfare</h3>
+                    <p>Protecting the animals who share our world. Supporting rescue, rehabilitation, and advocacy organizations.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Environmental Protection</h3>
+                    <p>Safeguarding the planet for the next generation. Investing in conservation and sustainability initiatives.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Children's Opportunity</h3>
+                    <p>Expanding access to education, health, and a fair start for every child, regardless of circumstance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p>The DIA Fund channels proceeds from Scannibal and family contributions into direct grants to vetted charitable organizations. We believe in putting resources where they matter mostâfunding organizations with proven track records and deep community impact.</p>
+            <div class="impact-highlight">
+                <p>â 100% of donated proceeds go directly to our partner charities</p>
+            </div>
+            <p>Every dollar flows toward meaningful change: filling empty stomachs, rescuing animals, protecting ecosystems, and opening doors for children.</p>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Trusted Partners</h2>
+            <p class="section-subtitle">4-star rated organizations making real change.</p>
+            <div class="partners-grid">
+                <div class="partner">
+                    <div class="partner-name">Feeding America</div>
+                    <div class="partner-rating">ââââ Charity Navigator</div>
+                    <p>A nationwide network of food banks and pantries fighting hunger and poverty. Delivering meals, hope, and dignity to millions.</p>
+                    <a href="https://www.feedingamerica.org" class="partner-link" target="_blank">Visit Feeding America â</a>
+                </div>
+                <div class="partner">
+                    <div class="partner-name">Best Friends Animal Society</div>
+                    <div class="partner-rating">ââââ Charity Navigator</div>
+                    <p>A sanctuary and advocacy organization saving the lives of companion animals. Leading the nation in building a no-kill future.</p>
+                    <a href="https://www.bestfriends.org" class="partner-link" target="_blank">Visit Best Friends â</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growing With Dia -->
+    <section class="growing">
+        <div class="container">
+            <div class="growing-content">
+                <h2>Growing With Dia</h2>
+                <p>Dia Rao is four years old. The DIA Fund grows with herâa living legacy that evolves from childhood through adulthood. Today, we steward resources on her behalf. Tomorrow, she will lead this fund herself.</p>
+                <p>This isn't just giving away money. <span class="accent-quote">This is building a legacy of compassion from the very beginning.</span> It's teaching that generosity is a responsibility, that impact compounds over time, and that one personâstarting youngâcan shape the future.</p>
+                <p>The DIA Fund demonstrates that philanthropy isn't just what you doâit's who you become. And Dia's generation will inherit not just wealth, but purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-title">A Rao Family Initiative</div>
+                <p>Proceeds from <a href="https://scannibal.app" class="footer-link" target="_blank">Scannibal</a> support The DIA Fund.</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-credit">
+                <p>&copy; 2026 The DIA Fund. Dedicated to Dream. Inspire. Advance.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
