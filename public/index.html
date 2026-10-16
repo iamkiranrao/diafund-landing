@@ -171,11 +171,30 @@
                         <summary>How is Scannibal connected?</summary>
                         <p>It’s an app we made. It links here if people want to give. Giving doesn’t unlock anything in the app.</p>
                     </details>
-                    <details>
-                        <summary>Can I say hi?</summary>
-                        <p>Please do. Email <a href="mailto:hello@thediafund.org">hello@thediafund.org</a>.</p>
-                    </details>
                 </div>
+            </div>
+        </section>
+        <!-- Say hi -->
+        <section class="section-alt" id="hello">
+            <div class="wrap narrow">
+                <div class="section-head">
+                    <span class="eyebrow">Say hi</span>
+                    <h2>We’d love to hear from you</h2>
+                    <p>Know a charity we should look at, or just want to say hello? It comes straight to us, and we read every note.</p>
+                </div>
+                <form class="hello-form" id="hello-form" novalidate>
+                    <div class="hello-row">
+                        <label>Name<input type="text" name="name" autocomplete="name" required maxlength="200"></label>
+                        <label>Email<input type="email" name="email" autocomplete="email" required maxlength="320"></label>
+                    </div>
+                    <label>Message<textarea name="message" rows="5" required minlength="10" maxlength="5000"></textarea></label>
+                    <!-- Honeypot: hidden from people, bots fill it in -->
+                    <label class="hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                    <div class="hello-actions">
+                        <button type="submit" class="btn">Send</button>
+                        <span class="hello-status" role="status" aria-live="polite"></span>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
@@ -191,6 +210,7 @@
                 <a href="/how-we-choose">How we choose</a>
                 <a href="#about">About</a>
                 <a href="#faq">FAQ</a>
+                <a href="#hello">Say hi</a>
                 <a href="https://scannibal.app" target="_blank" rel="noopener">Scannibal</a>
             </div>
             <div class="footer-credit">&copy; 2026 The Dia Fund</div>
