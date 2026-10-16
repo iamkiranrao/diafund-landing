@@ -277,6 +277,82 @@
             color: #16a34a;
         }
 
+        /* Donate Section */
+        .donate {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .donate .container {
+            max-width: 1000px;
+        }
+
+        .giving-total {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .giving-total .amount {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #16a34a;
+            letter-spacing: -1px;
+        }
+
+        .giving-total .label {
+            font-size: 1rem;
+            color: #6b7280;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .donate-card {
+            background-color: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .donate-card h3 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .donate-button {
+            display: inline-block;
+            background-color: #16a34a;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .donate-button:hover {
+            background-color: #15803d;
+        }
+
+        .donate-note {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
         /* Growing With Dia */
         .growing {
             background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
@@ -531,6 +607,34 @@
         </div>
     </section>
 
+    <!-- Donate -->
+    <section class="donate" id="donate">
+        <div class="container">
+            <h2 class="section-title">Give Directly</h2>
+            <p class="section-subtitle">100% of every gift below goes straight to the charity — it never passes through The DIA Fund.</p>
+
+            <div class="giving-total">
+                <div class="amount" id="giving-total-amount" data-giving-total>—</div>
+                <div class="label">raised by this page, all time</div>
+            </div>
+
+            <div class="donate-grid">
+                <div class="donate-card">
+                    <h3>Feeding America</h3>
+                    <!-- Verified Every.org org page, EIN 36-3673599 (matches IRS records) -->
+                    <a href="https://www.every.org/feedingamerica#donate" class="donate-button" target="_blank" rel="noopener" data-charity="feeding-america" data-every-org-slug="feedingamerica">Donate to Feeding America</a>
+                </div>
+                <div class="donate-card">
+                    <h3>Best Friends Animal Society</h3>
+                    <!-- Verified Every.org org page, EIN 23-7147797 (matches IRS records) -->
+                    <a href="https://www.every.org/bestfriends#donate" class="donate-button" target="_blank" rel="noopener" data-charity="best-friends" data-every-org-slug="bestfriends">Donate to Best Friends</a>
+                </div>
+            </div>
+
+            <p class="donate-note">Donations are processed by Every.org and are tax-deductible to the donor. The DIA Fund never receives or holds these funds.</p>
+        </div>
+    </section>
+
     <!-- Growing With Dia -->
     <section class="growing">
         <div class="container">
@@ -556,5 +660,39 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            var API = 'https://api.kiranrao.ai/api/dia-fund/giving-total';
+            // Every.org Partner Webhook token (from partners@every.org). Until it's set,
+            // donations still work but aren't counted in the total.
+            var WEBHOOK_TOKEN = '';
+
+            // Donate links: carry utm_source through to the webhook via partner_metadata.
+            var utm = new URLSearchParams(window.location.search).get('utm_source') || 'website';
+            document.querySelectorAll('[data-every-org-slug]').forEach(function (a) {
+                var params = new URLSearchParams();
+                params.set('partner_metadata', btoa(JSON.stringify({ utm_source: utm, charity: a.dataset.charity })));
+                params.set('success_url', 'https://thediafund.org/?thanks=1#donate');
+                if (WEBHOOK_TOKEN) params.set('webhook_token', WEBHOOK_TOKEN);
+                a.href = 'https://www.every.org/' + a.dataset.everyOrgSlug + '?' + params.toString() + '#donate';
+            });
+
+            // Running total from the Fenix ledger (Every.org webhook -> Supabase).
+            var el = document.querySelector('[data-giving-total]');
+            if (!el) return;
+            fetch(API)
+                .then(function (res) {
+                    if (!res.ok) throw new Error('not available');
+                    return res.json();
+                })
+                .then(function (data) {
+                    var total = Number(data.total_cents) / 100;
+                    el.textContent = '$' + total.toLocaleString('en-US', { maximumFractionDigits: 0 });
+                })
+                .catch(function () {
+                    el.textContent = 'Coming soon';
+                });
+        })();
+    </script>
 </body>
 </html>
