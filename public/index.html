@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The DIA Fund — Dream. Inspire. Advance.</title>
+    <title>The DIA Fund — Dream. Inspire. Awaken.</title>
+    <meta name="description" content="The DIA Fund is a family philanthropy fighting hunger, protecting animals, and expanding opportunity for children. Give directly to our partner charities.">
+    <meta name="theme-color" content="#1d4ed8">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thediafund.org/">
+    <meta property="og:title" content="The DIA Fund — Dream. Inspire. Awaken.">
+    <meta property="og:description" content="A family philanthropy fighting hunger, protecting animals, and expanding opportunity for children.">
+    <meta property="og:image" content="https://thediafund.org/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://thediafund.org/assets/og-image.png">
     <style>
         * {
             margin: 0;
@@ -37,6 +51,9 @@
         }
 
         nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
             font-family: system-ui, -apple-system, sans-serif;
             font-size: 1.3rem;
             font-weight: 700;
@@ -49,6 +66,11 @@
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s ease;
+        }
+
+        nav .logo img {
+            width: 36px;
+            height: 36px;
         }
 
         nav a:hover {
@@ -81,6 +103,23 @@
             color: #1f2937;
             margin-bottom: 0.5rem;
             letter-spacing: -1px;
+        }
+
+        .hero-logo {
+            display: block;
+            width: 260px;
+            max-width: 70vw;
+            height: auto;
+            margin: 0 auto 2rem;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
         }
 
         .hero .tagline {
@@ -412,6 +451,15 @@
             margin-bottom: 2rem;
         }
 
+        .footer-logo {
+            display: block;
+            width: 260px;
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            border-radius: 8px;
+        }
+
         .footer-title {
             font-family: system-ui, -apple-system, sans-serif;
             font-size: 1.1rem;
@@ -537,7 +585,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">The DIA Fund</a>
+            <a href="#" class="logo"><img src="/assets/icon.svg" alt="" width="36" height="36">The DIA Fund</a>
             <a href="https://scannibal.app" class="footer-link" style="margin: 0;">Learn about Scannibal</a>
         </div>
     </nav>
@@ -545,8 +593,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>The DIA Fund</h1>
-            <div class="tagline">Dream. Inspire. Advance.</div>
+            <h1 class="visually-hidden">The DIA Fund — Dream. Inspire. Awaken.</h1>
+            <img class="hero-logo" src="/assets/logo-stacked.svg" alt="The Dia Fund — Dream. Inspire. Awaken." width="260" height="312">
             <p>Named for Dia Gorapalli, The DIA Fund is a family philanthropy dedicated to fighting hunger, protecting animals, safeguarding the environment, and expanding opportunity for underserved children.</p>
         </div>
     </section>
@@ -651,12 +699,13 @@
     <footer>
         <div class="container">
             <div class="footer-content">
+                <img class="footer-logo" src="/assets/logo-horizontal-reversed.svg" alt="The Dia Fund — Dream. Inspire. Awaken." width="260" height="94">
                 <div class="footer-title">A Gorapalli Family Initiative</div>
                 <p>Proceeds from <a href="https://scannibal.app" class="footer-link" target="_blank">Scannibal</a> support The DIA Fund.</p>
             </div>
             <div class="footer-divider"></div>
             <div class="footer-credit">
-                <p>&copy; 2026 The DIA Fund. Dedicated to Dream. Inspire. Advance.</p>
+                <p>&copy; 2026 The DIA Fund. Dedicated to Dream. Inspire. Awaken.</p>
             </div>
         </div>
     </footer>
