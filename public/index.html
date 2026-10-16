@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Dia Fund — Dream. Inspire. Awaken.</title>
     <meta name="description" content="A small family fund for four causes: hunger, kids, animals, and the planet. Give directly to the charities we support.">
-    <meta name="theme-color" content="#1d4ed8">
+    <meta name="theme-color" content="#faf8f5">
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/assets/favicon-48.png" sizes="48x48" type="image/png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -18,640 +18,210 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://thediafund.org/assets/og-image.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Georgia, 'Garamond', serif;
-            background-color: #faf8f5;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #ffffff;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1d4ed8;
-            text-decoration: none;
-        }
-
-        nav a {
-            color: #1f2937;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav .logo img {
-            display: block;
-            height: 64px;
-            width: auto;
-        }
-
-        nav a:hover {
-            color: #1d4ed8;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #ffffff;
-            padding: 5rem 2rem;
-            text-align: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .hero .container {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-logo {
-            display: block;
-            width: 280px;
-            max-width: 70vw;
-            height: auto;
-            margin: 0 auto 2rem;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            clip: rect(0 0 0 0);
-            white-space: nowrap;
-        }
-
-        .hero .tagline {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 1.5rem;
-            color: #16a34a;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            letter-spacing: 0.5px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #6b7280;
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-
-
-        /* Sections */
-        .section-title {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #6b7280;
-            font-size: 1.05rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            background-color: #ffffff;
-            padding: 5rem 2rem;
-            border-top: 1px solid #e5e7eb;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .how-it-works .container {
-            max-width: 900px;
-        }
-
-        .how-it-works p {
-            font-size: 1.05rem;
-            color: #6b7280;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Donate Section */
-        .donate {
-            background-color: #ffffff;
-            padding: 5rem 2rem;
-            border-top: 1px solid #e5e7eb;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .donate .container {
-            max-width: 1000px;
-        }
-
-        .giving-total {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .giving-total .amount {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #16a34a;
-            letter-spacing: -1px;
-        }
-
-        .giving-total .label {
-            font-size: 1rem;
-            color: #6b7280;
-        }
-
-        .donate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .donate-card {
-            background-color: #faf8f5;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e5e7eb;
-        }
-
-        .donate-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cause-label {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #d97706;
-            margin-bottom: 0.4rem;
-        }
-
-        .donate-card .blurb {
-            color: #6b7280;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-            flex-grow: 1;
-        }
-
-        .donate-card .rating {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.8rem;
-            color: #9ca3af;
-            margin-bottom: 1rem;
-        }
-
-        .charity-link {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.85rem;
-            color: #1d4ed8;
-            text-decoration: none;
-            margin-top: 0.9rem;
-        }
-
-        .charity-link:hover {
-            text-decoration: underline;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            margin-top: 2rem;
-            background-color: #1d4ed8;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: system-ui, -apple-system, sans-serif;
-            font-weight: 600;
-            padding: 0.85rem 1.75rem;
-            border-radius: 6px;
-        }
-
-        .hero-cta:hover {
-            background-color: #1e40af;
-        }
-
-        .how-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .how-list li {
-            background-color: #faf8f5;
-            border-left: 4px solid #16a34a;
-            padding: 1.1rem 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            color: #6b7280;
-            line-height: 1.7;
-        }
-
-        .how-list strong {
-            color: #1f2937;
-        }
-
-        .growing h3 {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin: 2rem 0 1rem;
-        }
-
-        .donate-card h3 {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            color: #1f2937;
-        }
-
-        .donate-button {
-            display: inline-block;
-            background-color: #16a34a;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: system-ui, -apple-system, sans-serif;
-            font-weight: 600;
-            padding: 0.85rem 1.75rem;
-            border-radius: 6px;
-            margin-top: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .donate-button:hover {
-            background-color: #15803d;
-        }
-
-        .donate-note {
-            text-align: center;
-            color: #9ca3af;
-            font-size: 0.85rem;
-            margin-top: 2rem;
-        }
-
-        /* Why "Dia" + where we show up */
-        .growing {
-            background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
-            padding: 5rem 2rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .growing .container {
-            max-width: 900px;
-        }
-
-        .growing-content {
-            background-color: #ffffff;
-            padding: 3rem;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .growing h2 {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-        }
-
-        .growing p {
-            font-size: 1rem;
-            color: #6b7280;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .growing p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1f2937;
-            color: #ffffff;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        footer .container {
-            max-width: 1200px;
-        }
-
-        .footer-content {
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            display: block;
-            width: 320px;
-            max-width: 80%;
-            height: auto;
-            margin: 0 auto 1.5rem;
-        }
-
-        .footer-title {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            color: #d1d5db;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-link {
-            color: #60a5fa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .footer-link:hover {
-            color: #93c5fd;
-        }
-
-        .footer-divider {
-            border-top: 1px solid #374151;
-            margin: 2rem 0;
-        }
-
-        .footer-credit {
-            font-size: 0.85rem;
-            color: #9ca3af;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .growing-content {
-                padding: 2rem;
-            }
-
-            .growing h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-            }
-
-            .hero {
-                padding: 3rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .tagline {
-                font-size: 1rem;
-            }
-
-            .how-it-works {
-                padding: 3rem 1.5rem;
-            }
-
-            .growing {
-                padding: 3rem 1.5rem;
-            }
-
-            footer {
-                padding: 2rem 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            nav .logo img {
-                height: 52px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo"><img src="/assets/logo-horizontal.png" alt="The Dia Fund — Dream. Inspire. Awaken." width="160" height="64"></a>
-            <a href="https://scannibal.app" class="footer-link" style="margin: 0;">Learn about Scannibal</a>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="logo"><img src="/assets/logo-horizontal.png" alt="The Dia Fund" width="160" height="64"></a>
+            <nav class="site-nav">
+                <a href="/updates/">Updates</a>
+                <a href="#about" class="nav-hide">About</a>
+                <a href="#faq" class="nav-hide">FAQ</a>
+                <a href="#donate" class="btn btn-small">Give</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="visually-hidden">The Dia Fund — Dream. Inspire. Awaken.</h1>
-            <img class="hero-logo" src="/assets/logo-stacked.png" alt="The Dia Fund — Dream. Inspire. Awaken." width="280" height="319">
-            <p>A small family fund for four things we care about: families who need food, kids who need a safe place to grow, animals who need homes, and a planet that needs looking after. We give to one charity for each, and you can too.</p>
-            <a href="#donate" class="hero-cta">See the four charities</a>
-        </div>
-    </section>
-
-    <!-- Four pillars + Give Directly -->
-    <section class="donate" id="donate">
-        <div class="container">
-            <h2 class="section-title">Four causes, four charities</h2>
-            <p class="section-subtitle">One highly rated charity for each. Give to any of them below. Your money goes straight to the charity through Every.org. We never touch it.</p>
-
-            <div class="giving-total">
-                <div class="amount" id="giving-total-amount" data-giving-total>—</div>
-                <div class="label">given through this page so far</div>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="wrap">
+                <h1>Four causes we care about. One easy way to help.</h1>
+                <p>We're a family in the Bay Area. We give to one charity each for hunger, kids, animals, and the planet, and we make it easy for you to give too.</p>
+                <a href="#donate" class="btn">Pick a cause</a>
             </div>
+        </section>
 
-            <div class="donate-grid">
-                <div class="donate-card" data-pillar="hunger">
-                    <div class="cause-label">Hunger</div>
-                    <h3>Alameda County Community Food Bank</h3>
-                    <p class="blurb">Gets food to families across Alameda County through local pantries, schools, and community programs.</p>
-                    <div class="rating">★★★★ Charity Navigator</div>
-                    <!-- Every.org page, EIN 94-2960297 (matches IRS records) -->
-                    <a href="https://www.every.org/accfb#donate" class="donate-button" target="_blank" rel="noopener" data-charity="alameda-food-bank" data-every-org-slug="accfb">Donate to the Food Bank</a>
-                    <a href="https://www.accfb.org" class="charity-link" target="_blank" rel="noopener">About the Food Bank →</a>
+        <!-- Give: the four causes -->
+        <section class="section-alt" id="donate">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Give</span>
+                    <h2>Pick a cause</h2>
+                    <p>Each charity is rated four stars by Charity Navigator. Your gift goes straight to them through Every.org. We never touch it.</p>
                 </div>
-                <div class="donate-card" data-pillar="kids">
-                    <div class="cause-label">Kids</div>
-                    <h3>Boys &amp; Girls Clubs of San Francisco</h3>
-                    <p class="blurb">A safe place after school, with mentors, homework help, and sports, for the kids who need it most.</p>
-                    <div class="rating">★★★★ Charity Navigator</div>
-                    <!-- Every.org page, EIN 94-1156608 (matches IRS records) -->
-                    <a href="https://www.every.org/kidsclub#donate" class="donate-button" target="_blank" rel="noopener" data-charity="bgc-sf" data-every-org-slug="kidsclub">Donate to the Clubs</a>
-                    <a href="https://www.kidsclub.org" class="charity-link" target="_blank" rel="noopener">About the Clubs →</a>
+
+                <div class="causes">
+                    <article class="cause">
+                        <div class="cause-top">
+                            <div class="cause-icon icon-hunger" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 7c0-1.5 1-2 1-3.5M12 7c0-1.5 1-2 1-3.5M16 7c0-1.5 1-2 1-3.5"/></svg>
+                            </div>
+                            <span class="cause-label">Hunger</span>
+                        </div>
+                        <h3>Alameda County Community Food Bank</h3>
+                        <p>Gets food to families across Alameda County through local pantries, schools, and community programs.</p>
+                        <div class="cause-meta">Oakland, CA · ★★★★ Charity Navigator</div>
+                        <div class="cause-actions">
+                            <!-- Every.org page, EIN 94-2960297 -->
+                            <a href="https://www.every.org/accfb#donate" class="btn" target="_blank" rel="noopener" data-charity="alameda-food-bank" data-every-org-slug="accfb">Donate</a>
+                            <a href="https://www.accfb.org" class="more" target="_blank" rel="noopener">Learn more →</a>
+                        </div>
+                    </article>
+
+                    <article class="cause">
+                        <div class="cause-top">
+                            <div class="cause-icon icon-kids" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="2.5"/><circle cx="16.5" cy="8" r="2"/><path d="M4 21v-5a4 4 0 0 1 8 0v5M13 21v-4a3.5 3.5 0 0 1 7 0v4"/></svg>
+                            </div>
+                            <span class="cause-label">Kids</span>
+                        </div>
+                        <h3>Boys &amp; Girls Clubs of San Francisco</h3>
+                        <p>A safe place after school, with mentors, homework help, and sports, for the kids who need it most.</p>
+                        <div class="cause-meta">San Francisco, CA · ★★★★ Charity Navigator</div>
+                        <div class="cause-actions">
+                            <!-- Every.org page, EIN 94-1156608 -->
+                            <a href="https://www.every.org/kidsclub#donate" class="btn" target="_blank" rel="noopener" data-charity="bgc-sf" data-every-org-slug="kidsclub">Donate</a>
+                            <a href="https://www.kidsclub.org" class="more" target="_blank" rel="noopener">Learn more →</a>
+                        </div>
+                    </article>
+
+                    <article class="cause">
+                        <div class="cause-top">
+                            <div class="cause-icon icon-animals" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="10" rx="2" ry="2.6"/><ellipse cx="10" cy="6" rx="2" ry="2.6"/><ellipse cx="14.5" cy="6" rx="2" ry="2.6"/><ellipse cx="18.5" cy="10" rx="2" ry="2.6"/><path d="M12 12c-3 0-6 3.5-6 6 0 1.7 1.3 2.5 3 2.5 1.3 0 2-.6 3-.6s1.7.6 3 .6c1.7 0 3-.8 3-2.5 0-2.5-3-6-6-6z"/></svg>
+                            </div>
+                            <span class="cause-label">Animals</span>
+                        </div>
+                        <h3>Berkeley Humane</h3>
+                        <p>Rescues cats and dogs in the East Bay, cares for them, and finds them homes.</p>
+                        <div class="cause-meta">Berkeley, CA · ★★★★ Charity Navigator</div>
+                        <div class="cause-actions">
+                            <!-- Every.org page, EIN 94-1347069 -->
+                            <a href="https://www.every.org/berkeleyhumane#donate" class="btn" target="_blank" rel="noopener" data-charity="berkeley-humane" data-every-org-slug="berkeleyhumane">Donate</a>
+                            <a href="https://www.berkeleyhumane.org" class="more" target="_blank" rel="noopener">Learn more →</a>
+                        </div>
+                    </article>
+
+                    <article class="cause">
+                        <div class="cause-top">
+                            <div class="cause-icon icon-planet" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l7-7"/></svg>
+                            </div>
+                            <span class="cause-label">Planet</span>
+                        </div>
+                        <h3>World Wildlife Fund</h3>
+                        <p>Protects wild places and the animals that live in them, from forests to oceans.</p>
+                        <div class="cause-meta">Worldwide · ★★★★ Charity Navigator</div>
+                        <div class="cause-actions">
+                            <!-- Every.org page, EIN 52-1693387 -->
+                            <a href="https://www.every.org/wwf#donate" class="btn" target="_blank" rel="noopener" data-charity="wwf" data-every-org-slug="wwf">Donate</a>
+                            <a href="https://www.worldwildlife.org" class="more" target="_blank" rel="noopener">Learn more →</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="donate-card" data-pillar="animals">
-                    <div class="cause-label">Animals</div>
-                    <h3>Berkeley Humane</h3>
-                    <p class="blurb">Rescues cats and dogs in the East Bay, cares for them, and finds them homes.</p>
-                    <div class="rating">★★★★ Charity Navigator</div>
-                    <!-- Every.org page, EIN 94-1347069 (matches IRS records) -->
-                    <a href="https://www.every.org/berkeleyhumane#donate" class="donate-button" target="_blank" rel="noopener" data-charity="berkeley-humane" data-every-org-slug="berkeleyhumane">Donate to Berkeley Humane</a>
-                    <a href="https://www.berkeleyhumane.org" class="charity-link" target="_blank" rel="noopener">About Berkeley Humane →</a>
-                </div>
-                <div class="donate-card" data-pillar="planet">
-                    <div class="cause-label">Planet</div>
-                    <h3>World Wildlife Fund</h3>
-                    <p class="blurb">Protects wild places and the animals that live in them, from forests to oceans.</p>
-                    <div class="rating">★★★★ Charity Navigator</div>
-                    <!-- Every.org page, EIN 52-1693387 (matches IRS records) -->
-                    <a href="https://www.every.org/wwf#donate" class="donate-button" target="_blank" rel="noopener" data-charity="wwf" data-every-org-slug="wwf">Donate to WWF</a>
-                    <a href="https://www.worldwildlife.org" class="charity-link" target="_blank" rel="noopener">About WWF →</a>
+
+                <div class="give-footnote">
+                    <span class="give-total"><strong data-giving-total>$0</strong> given through this page so far</span>
+                    <span>Gifts are tax-deductible. <a href="/updates/how-we-picked-our-four.html">How we picked these four</a></span>
                 </div>
             </div>
+        </section>
 
-            <p class="donate-note">Donations are processed by Every.org and are tax-deductible.</p>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">How it works</h2>
-            <p>Our family gives to these four charities. Scannibal, the app we make, sends people here too.</p>
-            <ul class="how-list">
-                <li><strong>You give straight to the charity.</strong> Your donation goes through Every.org to the charity you pick. It never passes through us.</li>
-                <li><strong>You can see it add up.</strong> The total above counts every gift made from this page.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Why "Dia" + where we show up -->
-    <section class="growing">
-        <div class="container">
-            <div class="growing-content">
-                <h2>Why it's called the Dia Fund</h2>
-                <p>It's named after our daughter, Dia. She's little now, but we want her to grow up seeing giving as a normal part of life, something you just do.</p>
-                <p>As she gets older, we hope she'll help choose where it goes.</p>
-                <h3>Where we show up</h3>
-                <p>Three of our four charities are right here in San Francisco and the East Bay, so we can show up in person, not just give online. We also volunteer with Big Brothers Big Sisters of the Bay Area.</p>
+        <!-- Updates -->
+        <section id="updates">
+            <div class="wrap narrow">
+                <div class="section-head">
+                    <span class="eyebrow">Updates</span>
+                    <h2>What we've been up to</h2>
+                </div>
+                <div class="post-list">
+                    <a class="post-card" href="/updates/how-we-picked-our-four.html">
+                        <div class="post-date">October 2026</div>
+                        <h3>How we picked our four charities</h3>
+                        <p>What we looked for, what surprised us, and why one pick breaks our own rule.</p>
+                    </a>
+                </div>
+                <a class="see-all" href="/updates/">All updates →</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <img class="footer-logo" src="/assets/logo-horizontal-white.png" alt="The Dia Fund — Dream. Inspire. Awaken." width="320" height="129">
-                <div class="footer-title">A family project</div>
-                <p>With help from <a href="https://scannibal.app" class="footer-link" target="_blank">Scannibal</a>, the app we make.</p>
+        <!-- About -->
+        <section class="section-alt" id="about">
+            <div class="wrap">
+                <div class="about-grid">
+                    <div>
+                        <span class="eyebrow">About us</span>
+                        <h2 style="font-size: 38px; margin-bottom: 18px;">A family, not a foundation</h2>
+                        <p>The Dia Fund is named after our daughter. She's little now, but we want her to grow up seeing giving as a normal part of life, something you just do. As she gets older, we hope she'll help choose where it goes.</p>
+                        <p>Three of our four charities are close to home in San Francisco and the East Bay, so we can show up in person, not just give online. We also volunteer with Big Brothers Big Sisters of the Bay Area.</p>
+                        <p>The fourth, WWF, goes back further. One of us got involved with them as a kid, at about Dia's age.</p>
+                    </div>
+                    <ul class="about-facts">
+                        <li><strong>Who runs it</strong>Our family.</li>
+                        <li><strong>Where the money goes</strong>Straight to the four charities. Gifts made here never pass through us.</li>
+                        <li><strong>How we chose</strong>Four-star ratings, most of each dollar spent on the work itself, and a real track record.</li>
+                        <li><strong>Scannibal</strong>Our family's app. It sends people here if they'd like to give. Nothing in the app depends on it.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-divider"></div>
-            <div class="footer-credit">
-                <p>&copy; 2026 The Dia Fund. Dream. Inspire. Awaken.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="wrap narrow">
+                <div class="section-head">
+                    <span class="eyebrow">FAQ</span>
+                    <h2>Questions</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Is my donation tax-deductible?</summary>
+                        <p>Yes. Donations are made through Every.org, a 501(c)(3) nonprofit, and you'll get a tax receipt from them by email.</p>
+                    </details>
+                    <details>
+                        <summary>Do you take a cut?</summary>
+                        <p>No. We never receive or hold any of the money given here. Every.org processes your gift and sends it to the charity you choose. Their <a href="https://www.every.org/faq" target="_blank" rel="noopener">FAQ</a> explains any payment processing fees.</p>
+                    </details>
+                    <details>
+                        <summary>What is Every.org?</summary>
+                        <p>A nonprofit that makes it easy to give to any US charity. It handles the payment, the receipt, and getting the money to the charity.</p>
+                    </details>
+                    <details>
+                        <summary>Why these four charities?</summary>
+                        <p>We wanted one cause each that we'd want Dia to care about, and charities that are highly rated, spend most of each dollar on the work, and have a long track record. <a href="/updates/how-we-picked-our-four.html">Here's how we picked them.</a></p>
+                    </details>
+                    <details>
+                        <summary>How is Scannibal connected?</summary>
+                        <p>Scannibal is an app our family makes. It links here so people can give if they'd like to. Giving doesn't unlock anything in the app.</p>
+                    </details>
+                    <details>
+                        <summary>How do I get in touch?</summary>
+                        <p>Email us at <a href="mailto:hello@thediafund.org">hello@thediafund.org</a>.</p>
+                    </details>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div>
+                <img src="/assets/logo-horizontal-white.png" alt="The Dia Fund" width="220" height="88">
+                <p>A family project. Dream. Inspire. Awaken.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#donate">Give</a>
+                <a href="/updates/">Updates</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://scannibal.app" target="_blank" rel="noopener">Scannibal</a>
+            </div>
+            <div class="footer-credit">&copy; 2026 The Dia Fund</div>
         </div>
     </footer>
-    <script>
-        (function () {
-            var API = 'https://api.kiranrao.ai/api/dia-fund/giving-total';
-            // Every.org Partner Webhook token (from every.org/developer). Public by design:
-            // it rides on the donate link so Every.org notifies our webhook.
-            var WEBHOOK_TOKEN = '30394c89ea62';
 
-            // Donate links: carry utm_source through to the webhook via partner_metadata.
-            var utm = new URLSearchParams(window.location.search).get('utm_source') || 'website';
-            document.querySelectorAll('[data-every-org-slug]').forEach(function (a) {
-                var params = new URLSearchParams();
-                params.set('partner_metadata', btoa(JSON.stringify({ utm_source: utm, charity: a.dataset.charity })));
-                params.set('success_url', 'https://thediafund.org/?thanks=1#donate');
-                if (WEBHOOK_TOKEN) params.set('webhook_token', WEBHOOK_TOKEN);
-                a.href = 'https://www.every.org/' + a.dataset.everyOrgSlug + '?' + params.toString() + '#donate';
-            });
-
-            // Running total from the Fenix ledger (Every.org webhook -> Supabase).
-            var el = document.querySelector('[data-giving-total]');
-            if (!el) return;
-            fetch(API)
-                .then(function (res) {
-                    if (!res.ok) throw new Error('not available');
-                    return res.json();
-                })
-                .then(function (data) {
-                    var total = Number(data.total_cents) / 100;
-                    el.textContent = '$' + total.toLocaleString('en-US', { maximumFractionDigits: 0 });
-                })
-                .catch(function () {
-                    el.textContent = 'Coming soon';
-                });
-        })();
-    </script>
+    <script src="/assets/site.js"></script>
 </body>
 </html>
