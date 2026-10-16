@@ -663,9 +663,9 @@
     <script>
         (function () {
             var API = 'https://api.kiranrao.ai/api/dia-fund/giving-total';
-            // Every.org Partner Webhook token (from partners@every.org). Until it's set,
-            // donations still work but aren't counted in the total.
-            var WEBHOOK_TOKEN = '';
+            // Every.org Partner Webhook token (from every.org/developer). Public by design:
+            // it rides on the donate link so Every.org notifies our webhook.
+            var WEBHOOK_TOKEN = '30394c89ea62';
 
             // Donate links: carry utm_source through to the webhook via partner_metadata.
             var utm = new URLSearchParams(window.location.search).get('utm_source') || 'website';
