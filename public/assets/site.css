@@ -125,7 +125,7 @@ section { padding: 88px 0; }
 }
 .give-total strong { font-family: var(--serif); font-size: 22px; color: var(--green); }
 
-/* ---------- Updates ---------- */
+/* ---------- What's new ---------- */
 .post-list { display: grid; gap: 18px; }
 .post-card {
     display: block;

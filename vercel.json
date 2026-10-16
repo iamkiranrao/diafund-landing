@@ -7,6 +7,11 @@
       "source": "/updates/how-we-picked-our-four",
       "destination": "/how-we-choose",
       "permanent": true
+    },
+    {
+      "source": "/updates",
+      "destination": "/whats-new",
+      "permanent": true
     }
   ]
 }
