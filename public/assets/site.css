@@ -142,14 +142,9 @@ section { padding: 88px 0; }
 .post-card p { color: var(--muted); font-size: 16px; }
 .see-all { display: inline-block; margin-top: 22px; font-weight: 600; text-decoration: none; }
 
-/* ---------- About ---------- */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.about-grid p { color: var(--muted); margin-bottom: 16px; font-size: 17px; }
-.about-grid h3 { font-size: 20px; margin-bottom: 10px; }
-.about-facts { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
-.about-facts li { list-style: none; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 16px; }
-.about-facts li:last-child { border-bottom: 0; }
-.about-facts strong { color: var(--ink); display: block; font-size: 15px; }
+/* ---------- About letter ---------- */
+.letter p { font-family: var(--serif); font-size: 20px; line-height: 1.75; color: #374151; margin-bottom: 18px; }
+.letter .signoff { font-style: italic; color: var(--navy-deep); margin-top: 8px; }
 
 /* ---------- FAQ ---------- */
 .faq details {
@@ -186,8 +181,7 @@ section { padding: 88px 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 820px) {
-    .causes, .about-grid { grid-template-columns: 1fr; }
-    .about-grid { gap: 28px; }
+    .causes { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
     body { font-size: 16px; }
@@ -203,5 +197,5 @@ section { padding: 88px 0; }
     .section-head h2 { font-size: 30px; }
     .cause { padding: 24px; }
     .article h1 { font-size: 32px; }
-    .article p, .article li { font-size: 18px; }
+    .article p, .article li, .letter p { font-size: 18px; }
 }
