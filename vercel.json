@@ -13,5 +13,6 @@
       "destination": "/whats-new",
       "permanent": true
     }
-  ]
+  ],
+  "trailingSlash": false
 }
